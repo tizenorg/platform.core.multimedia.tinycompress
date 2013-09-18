@@ -1,0 +1,12 @@
+prefix=@PREFIX@
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: tinycompress 
+Description: userspace library for alsa compressed API
+Version: 0.2.0
+Requires: alsa
+Libs: -L${libdir} -ltinycompress
+Cflags: -I${includedir}/tinycompress-0.2.0
+
