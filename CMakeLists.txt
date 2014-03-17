@@ -5,7 +5,7 @@ PROJECT(tinycompress C)
 
 SET(PREFIX ${CMAKE_INSTALL_PREFIX})
 SET(EXEC_PREFIX "\${prefix}")
-SET(LIBDIR "\${prefix}/lib")
+SET(LIBDIR "\${prefix}/${LIB_INSTALL_DIR}")
 SET(INCLUDEDIR "\${prefix}/include")
 
 # Set required packages
@@ -46,6 +46,6 @@ CONFIGURE_FILE(tinycompress.pc.in tinycompress.pc @ONLY)
 
 # install
 INSTALL(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/ DESTINATION include/tinycompress-0.2.0)
-INSTALL(TARGETS tinycompress LIBRARY DESTINATION lib)
+INSTALL(TARGETS tinycompress LIBRARY DESTINATION ${LIB_INSTALL_DIR})
 INSTALL(TARGETS cplay RUNTIME DESTINATION bin)
-INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/tinycompress.pc DESTINATION lib/pkgconfig)
+INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/tinycompress.pc DESTINATION ${LIB_INSTALL_DIR}/pkgconfig)

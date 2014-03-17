@@ -26,7 +26,7 @@ tinycompress headers and libraries for development.
 
 
 %build
-cmake . -DCMAKE_INSTALL_PREFIX=%{_prefix} -DVERSION=%{version}
+%cmake . -DCMAKE_INSTALL_PREFIX=%{_prefix} -DVERSION=%{version}
 make %{?jobs:-j%jobs}
 
 %install
